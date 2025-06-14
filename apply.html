@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>আবেদন ফর্ম - ST Online Service</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+    }
+    header {
+      padding: 20px;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.4);
+      font-size: 2rem;
+      font-weight: bold;
+      color: #00e676;
+    }
+    form {
+      max-width: 600px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 15px;
+      backdrop-filter: blur(6px);
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-size: 1.1rem;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    button {
+      margin-top: 20px;
+      background-color: #00e676;
+      color: #000;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #00c853;
+    }
+  </style>
+</head>
+<body>
+  <header>ST Online Service - আবেদন পত্র</header>
+
+  <form name="submit-to-google-sheet">
+    <label for="name">আপনার নাম:</label>
+    <input type="text" name="name" required>
+
+    <label for="phone">মোবাইল নাম্বার:</label>
+    <input type="text" name="phone" required>
+
+    <label for="nid">জাতীয় পরিচয়পত্র নম্বর:</label>
+    <input type="text" name="nid">
+
+    <label for="service">যে সেবার জন্য আবেদন করছেন:</label>
+    <input type="text" name="service" required>
+
+    <label for="message">অতিরিক্ত তথ্য:</label>
+    <textarea name="message" rows="4"></textarea>
+
+    <button type="submit">✅ আবেদন করুন</button>
+  </form>
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwqUQnWD_EbT1xgWZ8xMkIGG9JO-NkF0fucZjuErMXUD5etZuzvASR5CHkNseqnh137mg/exec';
+    const form = document.forms['submit-to-google-sheet'];
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+          alert("✅ আপনার আবেদন সফলভাবে জমা হয়েছে!");
+          form.reset(); // সাবমিশনের পর ফর্ম খালি হবে
+        })
+        .catch(error => alert("❌ আবেদন জমা হয়নি। আবার চেষ্টা করুন।"));
+    });
+  </script>
+</body>
+</html>

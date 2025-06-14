@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ST Online Service</title>
+  <style>
+    * {
+      margin: 0; padding: 0;
+      box-sizing: border-box;
+      font-family: 'Google Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    html, body {
+      height: 100%;
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      position: relative;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+      opacity: 0.15;
+      z-index: 0;
+      filter: brightness(0.9);
+      transform: scale(1.1);
+    }
+
+    .title {
+      text-align: center;
+      margin-top: 100px;
+      font-size: 3.6rem;
+      color: #ffffff;
+      font-weight: bold;
+      z-index: 1;
+      position: relative;
+      text-shadow: 1px 1px 5px #00000055;
+    }
+
+    nav {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      z-index: 1;
+      position: relative;
+      flex-wrap: wrap;
+    }
+    nav a {
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 30px;
+      background-color: rgba(26, 115, 232, 0.9);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+      transition: background 0.3s, transform 0.2s;
+    }
+    nav a:hover {
+      background: #0b47c1;
+      transform: scale(1.05);
+    }
+
+    .description {
+      text-align: center;
+      margin: 60px auto;
+      max-width: 800px;
+      font-size: 1.15rem;
+      color: #fff;
+      font-weight: 500;
+      z-index: 1;
+      position: relative;
+      background-color: rgba(255,255,255,0.1);
+      padding: 30px;
+      border-radius: 15px;
+      backdrop-filter: blur(3px);
+      line-height: 1.9;
+    }
+
+    .highlight {
+      color: #ffeb3b;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .title {
+        font-size: 2.4rem;
+        margin-top: 80px;
+      }
+      nav {
+        flex-direction: column;
+        gap: 20px;
+      }
+      nav a {
+        font-size: 1rem;
+        width: 80%;
+        text-align: center;
+      }
+      .description {
+        font-size: 1rem;
+        padding: 20px;
+        margin: 40px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="title">ST Online Service</h1>
+
+  <nav>
+   <a href="http://127.0.0.1:5500/service.html" >সার্ভিস</a>
+  </nav>
+
+  <div class="description">
+    <h2>এসটি অনলাইন সার্ভিস সম্পর্কে</h2>
+    <p><span class="highlight">এসটি অনলাইন সার্ভিস</span> একটি আধুনিক, নির্ভরযোগ্য ও দ্রুতগতির ডিজিটাল প্ল্যাটফর্ম। এখানে আপনি ঘরে বসেই পাবেন সরকারি ও বেসরকারি <span class="highlight">বিভিন্ন গুরুত্বপূর্ণ সেবা</span> খুব সহজে এবং দ্রুত। আমরা প্রতিশ্রুতিবদ্ধ — <span class="highlight">সুলভে, নিরাপদে ও মানসম্মত সেবা</span> প্রদান করতে।</p>
+  </div>
+
+</body>
+</html>
